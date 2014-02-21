@@ -1,12 +1,10 @@
 <div class="container">
   <h1>Smurl</h1>
+  <% @smurl.errors.messages[:l_url].each do |error| %>
+  <p><%= error %></p>
+  <% end %>
   <form action="/smurls" method="post">
     Url: <input type="text" name="l_url">
     <input type="submit" value="Submit!">
   </form>
-  <ul>
-  <% @smurls.each do |smurl|  %>
-    <li><a href="/smurls/<%= smurl.s_url %>">/smurls/<%= smurl.s_url %></a></li>
-  <% end %>
-  </ul>
 </div>
